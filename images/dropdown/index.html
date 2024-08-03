@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dropdown</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dropdown">
+        <button>Dropdown</button>
+        <div id="dropdown" class="content">
+            <a href="#">one</a>
+            <a href="#">two</a>
+            <a href="#">three</a>
+        </div> 
+    </div>
+    <script>
+        function myFunction(){
+            document.getElementById('dropdown').classList.toggle('show')
+        }
+    </script>
+</body>
+</html>

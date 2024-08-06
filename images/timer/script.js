@@ -1,34 +1,35 @@
-let secondsTimer = 0;
-let interval = null;
-const time = document.getElementById("watch");
+let stopWatch = 0;
+let stopTimer = null;
+let hourHand = null;
+const time = document.getElementById("watch")
 
 function padStart(value){
     return String(value).padStart(2, "0")
 }
 
-function setTime(){
-    const minutes = Math.floor(secondsTimer / 60)
-    const seconds = secondsTimer % 60
+function starter(){
+    const hours = Math.floor(stopWatch / 3600)
+    const minutes = Math.floor((stopWatch % 3600) / 60)
+    const seconds = stopWatch % 60;
 
-    time.innerHTML = `${padStart(minutes)}:${padStart(seconds)}`
+    time.innerHTML = `${padStart(hours)}:${padStart(minutes)}:${padStart(seconds)}`
 }
 
-function timer(){
-    secondsTimer++
-    setTime()
+function addition(){
+    stopWatch++
+    starter()
 }
-
 function start(){
-    if(interval)stop()
-    interval = setInterval(timer, 1000)
+    if(stopTimer)stop()
+        stopTimer = setInterval(addition, 1000)
 }
 
 function stop(){
-    clearInterval(interval)
- }
- 
- function reset(){
-     stop();
-     secondsTimer = 0;
-     setTime()
- }
+    clearInterval(stopTimer)
+}
+
+function reset(){
+    stop()
+    stopWatch = 0;
+    starter() 
+}

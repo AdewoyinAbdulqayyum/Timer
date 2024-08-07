@@ -17,12 +17,16 @@ body{
     display: grid;
     justify-content: center;
 }
-.above{
+#above{
     width:15.6rem;
     height: 6.5rem;
     background: white;
-    text-align: right;
+    /* text-align: right; */
     box-shadow: inset 4px 4px 5px #acaaaa,inset -6px -6px 12px #fff;
+    border: none;
+    color: black;
+    font-size: 30px;
+    font-weight: 4.5rem;
 }
 button{
     width:3.3rem;
